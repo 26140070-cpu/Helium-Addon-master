@@ -69,14 +69,14 @@ public class HeliumTab extends Tab {
         @Override
         public void initWidgets() {
             WHorizontalList topBar = add(theme.horizontalList()).expandX().widget();
-            topBar.add(theme.label("Helium v 0.0.2")).widget();
+            topBar.add(theme.label("Helium v 1.0.0")).widget();
             topBar.add(theme.label("by Donalp012")).expandX().widget();
 
             WButton githubBtn = topBar.add(theme.button("GitHub")).widget();
-            githubBtn.action = () -> Util.getOperatingSystem().open("https://github.com/tuusuario/Helium-Addon");
+            githubBtn.action = () -> Util.getOperatingSystem().open("https://github.com/26140070-cpu/Helium-Addon-master/");
 
             WButton discordBtn = topBar.add(theme.button("Discord")).widget();
-            discordBtn.action = () -> Util.getOperatingSystem().open("https://discord.gg/tuinvitacion");
+            discordBtn.action = () -> Util.getOperatingSystem().open("https://discord.gg/G6CwQHBJF6");
 
             add(theme.horizontalSeparator()).expandX();
 
