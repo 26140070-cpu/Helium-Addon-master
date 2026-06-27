@@ -1,0 +1,33 @@
+{
+  "required": true,
+  "package": "com.helium.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "PackUtilModuleMixin",
+    "ClientPlayNetworkHandlerMixin",
+    "LevelLoadingScreenMixin",
+    "SplashOverlayMixin",
+    "TitleScreenMixin",
+    "ScreenMixin",
+    "MinecraftClientMixin",
+    "WidgetScreenMixin",
+    "TitleScreenCreditsMixin",
+    "ModulesScreenWCategoryControllerMixin",
+    "MenuBackgroundMixin",
+    "ClientPlayerInteractionManagerInvoker"
+  ],
+  "client": [
+    "accessor.PlayerInventoryAccessor",
+    "meteor.GuiThemeMixin",
+    "meteor.ModuleScreenMixin",
+    "meteor.ModulesScreenMixin",
+    "meteor.MeteorGuiThemeMixin",
+    "accessor.ClientPlayerInteractionManagerAccessor",
+    "meteor.accessor.CategoryAccessor",
+    "accessor.WidgetScreenAccessor",
+    "accessor.MinecraftClientAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

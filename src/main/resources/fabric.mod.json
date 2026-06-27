@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "helium",
+  "version": "${version}",
+  "name": "Helium",
+  "description": "An Anarchy Addon.",
+  "authors": [
+    "Donalp012"
+  ],
+  "contact": {
+  },
+  "icon": "assets/helium/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "meteor": [
+      "com.helium.HeliumAddon"
+    ]
+  },
+  "mixins": [
+    "helium-addon.mixins.json"
+  ],
+  "custom": {
+    "meteor-client:color": "225,55,0",
+    "modmenu": {
+      "parent": {
+        "id": "meteor-client"
+      }
+    }
+  },
+  "depends": {
+    "java": ">=21",
+    "minecraft": ["1.21.11"],
+    "meteor-client": "*"
+  },
+  "suggests": {
+    "catppuccin": "*"
+  }
+}

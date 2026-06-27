@@ -1,0 +1,24 @@
+[14:18:06] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.11 with Fabric Loader 0.18.2
+[14:18:06] [main/DEBUG] (FabricLoader/GamePatch) Found game constructor: net.minecraft.client.main.Main -> net.minecraft.client.MinecraftClient
+[14:18:06] [main/DEBUG] (FabricLoader/GamePatch) Patching game constructor <init>(Lnet/minecraft/client/RunArgs;)V
+[14:18:06] [main/DEBUG] (FabricLoader/GamePatch) Run directory field is thought to be net/minecraft/client/MinecraftClient/runDirectory
+[14:18:06] [main/DEBUG] (FabricLoader/GamePatch) Applying brand name hook to net/minecraft/client/ClientBrandRetriever::getClientModName
+[14:18:06] [main/DEBUG] (FabricLoader/GamePatch) Applying brand name hook to net/minecraft/server/MinecraftServer::getServerModName
+[14:18:06] [main/DEBUG] (FabricLoader/GamePatch) Patched 3 classs
+[14:18:06] [main/DEBUG] (FabricLoader/Discovery) Mod discovery time: 12.7 ms
+[14:18:06] [main/WARN] (FabricLoader/Resolution) Mod resolution failed
+[14:18:06] [main/INFO] (FabricLoader/Resolution) Immediate reason: [HARD_DEP_NO_CANDIDATE packutil 8.8.8 {depends fabric-api @ [*]}, ROOT_FORCELOAD_SINGLE packutil 8.8.8]
+[14:18:06] [main/INFO] (FabricLoader/Resolution) Reason: [HARD_DEP packutil 8.8.8 {depends fabric-api @ [*]}]
+[14:18:06] [main/INFO] (FabricLoader/Resolution) Fix: add [add:fabric-api 1 ([(-∞,∞)])], remove [], replace []
+[14:18:06] [main/ERROR] (FabricLoader) Incompatible mods found!
+net.fabricmc.loader.impl.FormattedException: Some of your mods are incompatible with the game or each other!
+Hemos encontrado una solución prometedora:
+	 - Instala fabric-api, cualquier versión.
+Dependencias no satisfechas:
+	 - ¡El mod 'YungLightUI' (packutil) 8.8.8 necesita cualquier versión de fabric-api, que no tienes!
+	at net.fabricmc.loader.impl.FormattedException.ofLocalized(FormattedException.java:51)
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:202)
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:142)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:66)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
