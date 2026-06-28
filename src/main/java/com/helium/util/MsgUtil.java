@@ -20,7 +20,7 @@ public class MsgUtil {
     }
 
     public static String getRawPrefix() {
-        return "[Stardust]";
+        return "[Helium]";
     }
 
     public static String getRawPrefix(String module) {

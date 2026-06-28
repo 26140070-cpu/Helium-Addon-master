@@ -1,8 +1,5 @@
 package com.helium;
 
-import com.helium.gui.HeliumTab;
-import com.helium.gui.WelcomeWindow;
-import com.helium.gui.themes.*;
 import com.helium.hud.*;
 import com.helium.modules.combat.*;
 import com.helium.modules.render.*;
@@ -18,7 +15,6 @@ import meteordevelopment.meteorclient.addons.GithubRepo;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.gui.GuiThemes;
-import meteordevelopment.meteorclient.gui.tabs.Tabs;
 import meteordevelopment.meteorclient.systems.config.Config;
 import meteordevelopment.meteorclient.systems.hud.Hud;
 import meteordevelopment.meteorclient.systems.hud.HudGroup;
@@ -47,8 +43,7 @@ public class HeliumAddon extends MeteorAddon {
 
     @Override
     public void onInitialize() {
-        WelcomeWindow.showWindow();
-        ChatUtils.registerCustomPrefix("com.helium", () -> Text.literal("Helium").formatted(Formatting.GOLD));;
+        ChatUtils.registerCustomPrefix("com.helium", () -> Text.literal("Helium").formatted(Formatting.GOLD));
         LOG.info("Initializing Helium Addon");
 
         HeliumConfig.init();
@@ -57,6 +52,7 @@ public class HeliumAddon extends MeteorAddon {
         FontAutoInstaller.init();
         PanoramaConfig.init();
         MeteorClient.EVENT_BUS.subscribe(this);
+
         Modules.get().add(new HeliumRPC());
         Modules.get().add(new PackUtilToggle());
         Modules.get().add(new HeliumCrystalAura());
@@ -81,23 +77,12 @@ public class HeliumAddon extends MeteorAddon {
         Modules.get().add(new ComboTap());
         Modules.get().add(new Autism());
         Modules.get().add(new Factspammer());
-        Tabs.get().add(new HeliumTab());
+
         Hud.get().register(MARKTEXT);
         Hud.get().register(TotemsSecurity.INFO);
-        GuiThemes.add(NamiTheme.INSTANCE);
-        GuiThemes.add(JJSTheme.INSTANCE);
-        GuiThemes.add(LambdaTheme.INSTANCE);
-        GuiThemes.add(NetherTheme.INSTANCE);
-        GuiThemes.add(HeliumTheme.INSTANCE);
-        GuiThemes.add(DarkPurpleTheme.INSTANCE);
-        try {
-            java.lang.reflect.Field nameField = HeliumTheme.class.getSuperclass().getSuperclass().getDeclaredField("name");
-            nameField.setAccessible(true);
-            nameField.set(HeliumTheme.INSTANCE, "Helium");
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            LOG.error("Could not rename theme Helium", e);
-        }
+        HeliumUIRegistry.register();
     }
+
     @EventHandler
     private void onTick(TickEvent.Post event) {
         if (GuiThemes.get() != null && "JJS Style".equals(GuiThemes.get().name)) {
@@ -116,7 +101,6 @@ public class HeliumAddon extends MeteorAddon {
         Modules.registerCategory(LEGIT_MISC);
         Modules.registerCategory(LEGIT_UHC);
         Modules.registerCategory(LEGIT_VANILLA);
-
     }
 
     @Override

@@ -1,6 +1,7 @@
 {
   "required": true,
   "package": "com.helium.mixin",
+  "plugin": "com.helium.mixin.HeliumBootPlugin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "PackUtilModuleMixin",
