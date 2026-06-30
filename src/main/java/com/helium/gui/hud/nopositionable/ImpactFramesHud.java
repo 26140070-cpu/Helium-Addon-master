@@ -1,12 +1,9 @@
-package com.helium.hud;
+package com.helium.gui.hud.nopositionable;
 
 import com.helium.util.render.ImpactFramesHandler;
-import meteordevelopment.meteorclient.renderer.Renderer2D;
 import meteordevelopment.meteorclient.systems.hud.HudElement;
 import meteordevelopment.meteorclient.systems.hud.HudElementInfo;
-import meteordevelopment.meteorclient.systems.hud.HudGroup;
 import meteordevelopment.meteorclient.systems.hud.HudRenderer;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 
 import static com.helium.HeliumAddon.Helium_Hud;

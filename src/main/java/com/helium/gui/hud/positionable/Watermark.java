@@ -1,4 +1,4 @@
-package com.helium.hud;
+package com.helium.gui.hud.positionable;
 
 import meteordevelopment.meteorclient.systems.hud.HudElement;
 import meteordevelopment.meteorclient.systems.hud.HudElementInfo;

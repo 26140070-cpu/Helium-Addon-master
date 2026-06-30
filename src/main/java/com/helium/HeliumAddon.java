@@ -1,6 +1,7 @@
 package com.helium;
 
-import com.helium.hud.*;
+import com.helium.gui.hud.positionable.HeliumTargetHud;
+import com.helium.gui.hud.positionable.TotemsSecurity;
 import com.helium.modules.combat.*;
 import com.helium.modules.render.*;
 import com.helium.modules.shit.Autism;
@@ -27,7 +28,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import org.slf4j.Logger;
 
-import static com.helium.hud.Watermark.MARKTEXT;
+import static com.helium.gui.hud.positionable.Watermark.MARKTEXT;
 
 public class HeliumAddon extends MeteorAddon {
     public static final Logger LOG = LogUtils.getLogger();
@@ -68,6 +69,8 @@ public class HeliumAddon extends MeteorAddon {
         Modules.get().add(new AutoEnchantTable());
         Modules.get().add(new SafeElytra());
         Modules.get().add(new PearlCatch());
+        Modules.get().add(new HitParticles());
+        Modules.get().add(new JumpCircles());
         Modules.get().add(new LegitTotem());
         Modules.get().add(new StunLam());
         Modules.get().add(new WeatherChanger());
@@ -81,6 +84,7 @@ public class HeliumAddon extends MeteorAddon {
         Hud.get().register(MARKTEXT);
         Hud.get().register(TotemsSecurity.INFO);
         HeliumUIRegistry.register();
+        Hud.get().register(HeliumTargetHud.INFO);
     }
 
     @EventHandler
